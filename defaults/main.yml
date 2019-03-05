@@ -1,0 +1,6 @@
+import_hypervisor_kvm: True
+
+hypervisor_types: []
+# example
+# hypervisor_types:
+#   - kvm

@@ -1,0 +1,3 @@
+- import_tasks: kvm.yml
+  tags: hypervisor_kvm
+  when: import_hypervisor_kvm and 'kvm' in hypervisor_types
