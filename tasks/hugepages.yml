@@ -1,0 +1,13 @@
+- name: allocate hugepages
+  sysctl:
+    name: vm.nr_hugepages
+    value: '{{ hypervisor_hugepages_number }}'
+    sysctl_file: '{{ hypervisor_hugepages_sysctl_file }}'
+    reload: yes
+  when: hypervisor_hugepages_enabled
+
+- name: cleanup hugepages
+  file:
+    path: '{{ hypervisor_hugepages_sysctl_file }}'
+    state: absent
+  when: not hypervisor_hugepages_enabled
