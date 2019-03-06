@@ -1,3 +1,12 @@
+- name: install packages for bootstrap-lv
+  packages:
+    state: present
+    pkg:
+      - cdebootstrap
+      - ubuntu-archive-keyring
+      - parted
+      - kpartx
+
 - name: create directory /opt
   file:
     path: /opt
