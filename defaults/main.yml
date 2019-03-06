@@ -1,11 +1,12 @@
 import_hypervisor_kvm: True
+import_hypervisor_hugepages: True
 
 hypervisor_types: []
 # example
 # hypervisor_types:
 #   - kvm
 
-hypervisor_hugepages_enable: True
+hypervisor_hugepages_enabled: True
 hypervisor_hugepages_sysctl_filename: "90-hugepages.conf"
 hypervisor_hugepages_sysctl_file: "/etc/sysctl.d/{{ hypervisor_hugepages_sysctl_filename }}"
 # size of hugepages (default: 2048 KiB)
