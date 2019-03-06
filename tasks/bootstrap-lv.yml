@@ -1,5 +1,5 @@
 - name: install packages for bootstrap-lv
-  packages:
+  package:
     state: present
     pkg:
       - cdebootstrap
