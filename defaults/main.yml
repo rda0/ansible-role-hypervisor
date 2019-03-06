@@ -1,5 +1,6 @@
 import_hypervisor_kvm: True
 import_hypervisor_hugepages: True
+import_hypervisor_bootstrap_lv: True
 
 hypervisor_types: []
 # example
