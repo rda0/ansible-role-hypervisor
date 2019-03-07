@@ -1,15 +1,15 @@
-block:
+- block:
 
-  - import_tasks: kvm.yml
-    tags: hypervisor_kvm
-    when: import_hypervisor_kvm and 'kvm' in hypervisor_types
+    - import_tasks: kvm.yml
+      tags: hypervisor_kvm
+      when: import_hypervisor_kvm and 'kvm' in hypervisor_types
 
-  - import_tasks: hugepages.yml
-    tags: hypervisor_hugepages
-    when: import_hypervisor_hugepages
+    - import_tasks: hugepages.yml
+      tags: hypervisor_hugepages
+      when: import_hypervisor_hugepages
 
-  - import_tasks: bootstrap-lv.yml
-    tags: hypervisor_bootstrap_lv
-    when: import_hypervisor_bootstrap_lv
+    - import_tasks: bootstrap-lv.yml
+      tags: hypervisor_bootstrap_lv
+      when: import_hypervisor_bootstrap_lv
 
   tags: hypervisor
