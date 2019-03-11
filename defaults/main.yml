@@ -8,6 +8,7 @@ hypervisor_types: []
 #   - kvm
 
 hypervisor_hugepages_enabled: False
+hypervisor_hugepages_at_boot: False
 hypervisor_hugepages_sysctl_filename: "90-hugepages.conf"
 hypervisor_hugepages_sysctl_file: "/etc/sysctl.d/{{ hypervisor_hugepages_sysctl_filename }}"
 # size of hugepages (default: 2048 KiB)
