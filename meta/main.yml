@@ -2,6 +2,7 @@ dependencies:
   - role: bootloader
     tags: hypervisor
     vars:
+      role_bootloader: True
       bootloader_kernel_parameters_hugepages:
         - 'hugepagesz={{ hypervisor_hugepages_size }}K'
         - 'hugepages={{ hypervisor_hugepages_number }}'
