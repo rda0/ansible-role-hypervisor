@@ -1,0 +1,28 @@
+- name: install packages for bootstrap
+  package:
+    state: present
+    pkg:
+      - debootstrap
+      - ubuntu-archive-keyring
+      - parted
+      - kpartx
+      - util-linux
+
+- name: create directory /opt
+  file:
+    path: /opt
+    state: directory
+
+- name: clone git repo bootstrap to /opt/bootstrap
+  git:
+    repo: git@gitlab.phys.ethz.ch:core/bootstrap.git
+    dest: /opt/bootstrap
+    accept_hostkey: yes
+    update: yes
+    depth: 1
+
+- name: create bootstrap symlink in /usr/local/bin
+  file:
+    src: /opt/bootstrap/bootstrap
+    dest: /usr/local/bin/bootstrap
+    state: link

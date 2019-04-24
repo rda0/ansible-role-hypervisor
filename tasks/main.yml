@@ -8,8 +8,8 @@
     tags: hypervisor_hugepages
     when: import_hypervisor_hugepages
 
-  - import_tasks: bootstrap-lv.yml
-    tags: hypervisor_bootstrap_lv
-    when: import_hypervisor_bootstrap_lv
+  - import_tasks: bootstrap.yml
+    tags: hypervisor_bootstrap
+    when: import_hypervisor_bootstrap
 
   tags: hypervisor

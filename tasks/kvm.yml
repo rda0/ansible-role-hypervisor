@@ -13,6 +13,5 @@
       - bridge-utils
       - netcat-openbsd
       - debootstrap
-      - cdebootstrap
       - parted
       - kpartx
