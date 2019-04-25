@@ -8,7 +8,9 @@
       - libvirt-daemon-system
       - libvirt-clients
       - libosinfo-bin
+      - xfsprogs
       - libguestfs-tools
+      - libguestfs-xfs
       - virtinst
       - bridge-utils
       - netcat-openbsd
