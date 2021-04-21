@@ -3,10 +3,16 @@
     state: present
     pkg:
       - debootstrap
-      - ubuntu-archive-keyring
       - parted
       - kpartx
       - util-linux
+
+- name: install packages for bootstrap (TODO bullseye does not support ubuntu keyring)
+  package:
+    state: present
+    pkg:
+      - ubuntu-archive-keyring
+  when: ansible_distribution_release != 'bullseye'
 
 - name: create directory /opt
   file:
