@@ -6,6 +6,10 @@
       - parted
       - kpartx
       - util-linux
+      - wget
+      - binutils
+      - xz-utils
+      - zstd
 
 - name: install packages for bootstrap (TODO bullseye does not support ubuntu keyring)
   package:
@@ -32,3 +36,10 @@
     src: /opt/bootstrap/bootstrap
     dest: /usr/local/bin/bootstrap
     state: link
+
+- name: deploy debootstrap distribution symlinks
+  file:
+    src: '{{ item.script }}'
+    dest: '/usr/share/debootstrap/scripts/{{ item.name }}'
+    state: link
+  loop: '{{ hypervisor_debootstrap_distributions }}'
