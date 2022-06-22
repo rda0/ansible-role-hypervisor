@@ -18,7 +18,6 @@ hypervisor_hugepages_gb: 8
 # number of hugepages to allocate (default: 4096)
 hypervisor_hugepages_number: '{{ hypervisor_hugepages_gb*512 | int | abs }}'
 hypervisor_debootstrap_distributions:
-  - { name: stretch, script: sid }
   - { name: buster, script: sid }
   - { name: bullseye, script: sid }
   - { name: bookworn, script: sid }
