@@ -22,6 +22,9 @@
   file:
     path: /opt
     state: directory
+    owner: root
+    group: root
+    mode: 0755
 
 - name: clone git repo bootstrap to /opt/bootstrap
   git:

@@ -1,15 +1,18 @@
-- block:
+- name: tags-block
+  tags: hypervisor
+  block:
 
-  - import_tasks: kvm.yml
+  - name: import tasks from kvm.yml
+    import_tasks: kvm.yml
     tags: hypervisor_kvm
     when: import_hypervisor_kvm and 'kvm' in hypervisor_types
 
-  - import_tasks: hugepages.yml
+  - name: import tasks from hugepages.yml
+    import_tasks: hugepages.yml
     tags: hypervisor_hugepages
     when: import_hypervisor_hugepages
 
-  - import_tasks: bootstrap.yml
+  - name: import tasks from bootstrap.yml
+    import_tasks: bootstrap.yml
     tags: hypervisor_bootstrap
     when: import_hypervisor_bootstrap
-
-  tags: hypervisor
