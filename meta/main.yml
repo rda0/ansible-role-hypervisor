@@ -3,7 +3,4 @@ dependencies:
     tags: hypervisor
     vars:
       role_bootloader: True
-      bootloader_kernel_parameters_hugepages:
-        - 'hugepagesz={{ hypervisor_hugepages_size }}K'
-        - 'hugepages={{ hypervisor_hugepages_number }}'
-    when: hypervisor_hugepages_enabled and hypervisor_hugepages_at_boot
+      bootloader_kernel_parameters_hugepages: '{{ hypervisor_hugepages_bootloader_kernel_parameters if hypervisor_hugepages_enabled and hypervisor_hugepages_at_boot else [] }}'
