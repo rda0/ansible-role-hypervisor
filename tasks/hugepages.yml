@@ -1,5 +1,5 @@
 - name: allocate hugepages
-  sysctl:
+  ansible.posix.sysctl:
     name: vm.nr_hugepages
     value: '{{ hypervisor_hugepages_number }}'
     sysctl_file: '{{ hypervisor_hugepages_sysctl_file }}'
