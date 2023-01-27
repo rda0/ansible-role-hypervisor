@@ -16,7 +16,7 @@
     state: present
     pkg:
       - ubuntu-archive-keyring
-  when: ansible_distribution_release != 'bullseye'
+  when: ansible_distribution_release == 'buster'
 
 - name: create directory /opt
   file:
