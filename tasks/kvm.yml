@@ -8,6 +8,8 @@
       - libvirt-daemon-system
       - libvirt-clients
       - libosinfo-bin
+      - osinfo-db
+      - osinfo-db-tools
       - xfsprogs
       - libguestfs-tools
       - libguestfs-xfs
@@ -17,3 +19,16 @@
       - debootstrap
       - parted
       - kpartx
+
+- name: download osinfo database
+  ansible.builtin.get_url:
+    url: '{{ hypervisor_osinfo_database_url }}'
+    dest: '/usr/local/src/{{ hypervisor_osinfo_database_url | basename }}'
+    owner: root
+    group: root
+    mode: '0644'
+  when: hypervisor_osinfo_update
+
+- name: update local osinfo database
+  command: '/usr/bin/osinfo-db-import --local /usr/local/src/{{ hypervisor_osinfo_database_url | basename }}'
+  when: hypervisor_osinfo_update

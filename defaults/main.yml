@@ -27,3 +27,6 @@ hypervisor_debootstrap_distributions:
   - { name: bionic, script: gutsy }
   - { name: focal, script: gutsy }
   - { name: jammy, script: gutsy }
+
+hypervisor_osinfo_update: False
+hypervisor_osinfo_database_url: https://releases.pagure.org/libosinfo/osinfo-db-20231215.tar.xz
