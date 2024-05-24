@@ -24,7 +24,6 @@ hypervisor_debootstrap_distributions:
   - { name: buster, script: sid }
   - { name: bullseye, script: sid }
   - { name: bookworn, script: sid }
-  - { name: bionic, script: gutsy }
   - { name: focal, script: gutsy }
   - { name: jammy, script: gutsy }
 
