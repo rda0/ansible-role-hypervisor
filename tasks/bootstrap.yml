@@ -11,13 +11,6 @@
       - xz-utils
       - zstd
 
-- name: install packages for bootstrap (TODO bullseye does not support ubuntu keyring)
-  package:
-    state: present
-    pkg:
-      - ubuntu-archive-keyring
-  when: ansible_distribution_release == 'buster'
-
 - name: create directory /opt
   file:
     path: /opt
