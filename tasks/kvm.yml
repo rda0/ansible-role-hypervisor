@@ -32,3 +32,9 @@
 - name: update local osinfo database
   command: '/usr/bin/osinfo-db-import --local /usr/local/src/{{ hypervisor_osinfo_database_url | basename }}'
   when: hypervisor_osinfo_update
+
+- name: configure libvirt-guests parallel shutdown
+  lineinfile:
+    dest: /etc/default/libvirt-guests
+    regexp: '^#?PARALLEL_SHUTDOWN='
+    line: 'PARALLEL_SHUTDOWN={{ hypervisor_libvirt_parallel_shutdown }}'

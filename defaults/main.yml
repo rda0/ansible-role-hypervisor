@@ -28,3 +28,5 @@ hypervisor_debootstrap_distributions:
 
 hypervisor_osinfo_update: False
 hypervisor_osinfo_database_url: https://releases.pagure.org/libosinfo/osinfo-db-20231215.tar.xz
+
+hypervisor_libvirt_parallel_shutdown: 100
