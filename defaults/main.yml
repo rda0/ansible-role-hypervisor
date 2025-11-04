@@ -23,6 +23,7 @@ hypervisor_hugepages_bootloader_kernel_parameters:
 hypervisor_debootstrap_distributions:
   - { name: bullseye, script: sid }
   - { name: bookworn, script: sid }
+  - { name: trixie, script: sid }
 
 hypervisor_osinfo_update: False
 hypervisor_osinfo_database_url: https://releases.pagure.org/libosinfo/osinfo-db-20231215.tar.xz
