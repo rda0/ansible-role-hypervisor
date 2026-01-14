@@ -6,6 +6,10 @@
       - qemu-block-extra
       - libvirt-daemon
       - libvirt-daemon-system
+      - libvirt-daemon-system-systemd
+      - libvirt-daemon-config-network
+      - libvirt-daemon-config-nwfilter
+      - libvirt-daemon-driver-qemu
       - libvirt-clients
       - libosinfo-bin
       - osinfo-db
