@@ -13,3 +13,11 @@
   shell: "cat <<EOF | incus admin init --preseed\n{{ hypervisor_incus_init }}\nEOF"
   args:
     creates: /var/lib/incus/storage-pools/default
+
+- name: create lxc symlink alias
+  file:
+    src: /usr/bin/incus
+    dest: /usr/local/bin/lxc
+    owner: root
+    group: root
+    state: link
