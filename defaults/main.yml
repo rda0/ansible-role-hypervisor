@@ -1,4 +1,5 @@
 import_hypervisor_kvm: True
+import_hypervisor_incus: True
 import_hypervisor_hugepages: True
 import_hypervisor_bootstrap: True
 
@@ -6,6 +7,7 @@ hypervisor_types: []
 # example
 # hypervisor_types:
 #   - kvm
+#   - incus
 
 hypervisor_hugepages_enabled: False
 hypervisor_hugepages_at_boot: False
@@ -29,3 +31,33 @@ hypervisor_osinfo_update: False
 hypervisor_osinfo_database_url: https://releases.pagure.org/libosinfo/osinfo-db-20231215.tar.xz
 
 hypervisor_libvirt_parallel_shutdown: 100
+
+hypervisor_incus_zfs_dataset: zp0/var-virtual-incus
+hypervisor_incus_bridge_default: br-dc2552
+hypervisor_incus_init: |
+  config: {}
+  networks: []
+  storage_pools:
+  - config:
+      source: {{ hypervisor_incus_zfs_dataset }}
+    description: ""
+    name: default
+    driver: zfs
+  storage_volumes: []
+  profiles:
+  - config: {}
+    description: ""
+    devices:
+      eth0:
+        name: eth0
+        nictype: bridged
+        parent: {{ hypervisor_incus_bridge_default }}
+        type: nic
+      root:
+        path: /
+        pool: default
+        type: disk
+    name: default
+    project: default
+  projects: []
+  cluster: null

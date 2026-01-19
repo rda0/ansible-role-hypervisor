@@ -1,0 +1,15 @@
+- name: install incus
+  package:
+    name: incus-base
+
+- name: enable and start incus
+  systemd:
+    name: incus
+    enabled: yes
+    state: started
+    daemon_reload: yes
+
+- name: init incus
+  shell: "cat <<EOF | incus admin init --preseed\n{{ hypervisor_incus_init }}\nEOF"
+  args:
+    creates: /var/lib/incus/storage-pools/default

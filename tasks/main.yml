@@ -16,3 +16,8 @@
       import_tasks: bootstrap.yml
       tags: hypervisor_bootstrap
       when: import_hypervisor_bootstrap
+
+    - name: import tasks from incus.yml
+      import_tasks: incus.yml
+      tags: hypervisor_incus
+      when: import_hypervisor_incus and 'incus' in hypervisor_types
