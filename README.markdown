@@ -6,7 +6,8 @@ Deploy hypervisor hosts.
 Supported hypervisors
 ---------------------
 
-- kvm
+- libvirt
+- incus
 
 Configuration
 -------------
@@ -17,7 +18,8 @@ The hypervisor type and whether it should allocate hugepages must be explicitely
 hypervisor_hugepages_enabled: True
 hypervisor_hugepages_at_boot: True
 hypervisor_types:
-  - kvm
+  - libvirt
+  - incus
 ```
 
 The amount of hugepages must be manually specified on a per host basis:

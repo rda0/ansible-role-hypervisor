@@ -1,4 +1,4 @@
-import_hypervisor_kvm: True
+import_hypervisor_libvirt: True
 import_hypervisor_incus: True
 import_hypervisor_hugepages: True
 import_hypervisor_bootstrap: True
@@ -6,7 +6,7 @@ import_hypervisor_bootstrap: True
 hypervisor_types: []
 # example
 # hypervisor_types:
-#   - kvm
+#   - libvirt
 #   - incus
 
 hypervisor_hugepages_enabled: False

@@ -2,10 +2,10 @@
   tags: hypervisor
   block:
 
-    - name: import tasks from kvm.yml
-      import_tasks: kvm.yml
-      tags: hypervisor_kvm
-      when: import_hypervisor_kvm and 'kvm' in hypervisor_types
+    - name: import tasks from libvirt.yml
+      import_tasks: libvirt.yml
+      tags: hypervisor_libvirt
+      when: import_hypervisor_libvirt and 'libvirt' in hypervisor_types
 
     - name: import tasks from hugepages.yml
       import_tasks: hugepages.yml
