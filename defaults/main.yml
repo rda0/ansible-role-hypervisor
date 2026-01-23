@@ -32,7 +32,7 @@ hypervisor_osinfo_database_url: https://releases.pagure.org/libosinfo/osinfo-db-
 
 hypervisor_libvirt_parallel_shutdown: 100
 
-hypervisor_incus_zfs_dataset: zp0/var-virtual-incus
+hypervisor_incus_zfs_dataset: zp0/incus
 hypervisor_incus_bridge_default: br-dc2552
 hypervisor_incus_init: |
   config: {}
