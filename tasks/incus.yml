@@ -1,10 +1,18 @@
 - name: install incus
   package:
-    name: incus-base
+    name:
+      - incus-base
+      - distrobuilder
 
-- name: enable and start incus
+- name: enable incus
   systemd:
     name: incus
+    enabled: yes
+    daemon_reload: yes
+
+- name: enable and start incus-startup
+  systemd:
+    name: incus-startup
     enabled: yes
     state: started
     daemon_reload: yes
