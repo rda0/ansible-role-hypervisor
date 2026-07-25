@@ -21,7 +21,7 @@
 
 - name: clone git repo bootstrap to /opt/bootstrap
   git:
-    repo: "{{ global_gitlab_phys_ssh }}core/bootstrap.git"
+    repo: git@gitlab.phys.ethz.ch:core/bootstrap.git
     dest: /opt/bootstrap
     accept_hostkey: yes
     update: yes
