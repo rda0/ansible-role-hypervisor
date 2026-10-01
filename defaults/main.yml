@@ -23,7 +23,6 @@ hypervisor_hugepages_bootloader_kernel_parameters:
   - 'hugepagesz={{ hypervisor_hugepages_size }}K'
   - 'hugepages={{ hypervisor_hugepages_number }}'
 hypervisor_debootstrap_distributions:
-  - { name: bullseye, script: sid }
   - { name: bookworn, script: sid }
   - { name: trixie, script: sid }
 
