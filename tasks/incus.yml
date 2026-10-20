@@ -29,3 +29,9 @@
     owner: root
     group: root
     state: link
+
+- name: install distrobuilder
+  package:
+    name:
+      - distrobuilder
+      - gpg-agent  # required for incus image build from lxc-ci
